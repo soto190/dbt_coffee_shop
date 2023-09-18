@@ -81,6 +81,20 @@ dim_stores as (
     from {{ ref('dim_sales_outlets') }}
 ),
 
+dim_dates as (
+    select     
+        transaction_date,
+        date_id,
+        week_id,
+        week_desc,
+        month_id,
+        month_name,
+        quarter_id,
+        quarter_name,
+        year_id
+    from {{ ref('dim_dates') }}
+),
+
 add_dimensions_data as (
 
     select 
@@ -136,7 +150,17 @@ add_dimensions_data as (
         sto.store_longitude         as store_longitude,
         sto.store_latitude          as store_latitude,
         sto.manager                 as store_manager,
-        sto.neighorhood             as store_neighorhood
+        sto.neighorhood             as store_neighorhood,
+
+        dat.date_id,
+        dat.week_id,
+        dat.week_desc,
+        dat.month_id,
+        dat.month_name,
+        dat.quarter_id,
+        dat.quarter_name,
+        dat.year_id
+
 
     from stg_transactions as tra
 
@@ -151,6 +175,9 @@ add_dimensions_data as (
 
     left join dim_stores as sto
     on tra.sales_outlet_id = sto.sales_outlet_id
+
+    left join dim_dates as dat
+    on tra.transaction_date = dat.transaction_date
 )
 
 select * from add_dimensions_data
