@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: sources_bq__coffe_shop
+    database: soto190-data-analytics
+    schema: coffee_shop
+    description: BigQuery datasets for Coffee Shop
+    tables:
+      - name: src_bq__dim_products
+        description: raw source for products dimensions.
+
+      - name: src_bq__dim_customers
+        description: raw source for customers dimensions.
+
+      - name: src_bq__dim_dates
+        description: raw source for dates dimensions.
+
+      - name: src_bq__dim_generations
+        description: raw source for generations dimensions.
+
+      - name: src_bq__dim_sales_outlet
+        description: raw source for sales outlets dimensions.
+
+      - name: src_bq__dim_staff
+        description: raw source for staff dimensions.
+
+      - name: src_bq__dim_targets
+        description: raw source for targets dimensions.
+
+      - name: src_bq__stg_inventory
+        description: raw source for inventory.
+
+      - name: src_bq__stg_transactions_201904
+        description: raw source for 2019-04 sales transactions.
