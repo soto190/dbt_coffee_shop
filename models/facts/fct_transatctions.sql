@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with
 stg_transactions as (
     select 
