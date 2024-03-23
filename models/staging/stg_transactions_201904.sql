@@ -14,5 +14,6 @@ select
     quantity,
     line_item_amount,
     unit_price,
-    promo_item_yn
+    promo_item_yn,
+    '' as test
 from {{ source('sources_bq__coffe_shop', 'src_bq__stg_transactions_201904') }}
