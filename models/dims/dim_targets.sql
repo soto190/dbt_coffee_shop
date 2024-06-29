@@ -10,6 +10,6 @@ select
     beans_goal,
     beverage_goal,
     food_goal,
-    merchandise__goal,
+    merchandise_goal,
     total_goal
 from {{ ref('seed__sales_targets') }}
