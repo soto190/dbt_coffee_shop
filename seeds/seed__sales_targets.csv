@@ -1,4 +1,4 @@
-sales_outlet_id,year_month,beans_goal,beverage_goal,food_goal,merchandise _goal,total_goal
+sales_outlet_id,year_month,beans_goal,beverage_goal,food_goal,merchandise_goal,total_goal
 3,Apr-19,720,13500,3420,360,18000
 4,Apr-19,720,13500,3420,360,18000
 5,Apr-19,1000,18750,4750,500,25000

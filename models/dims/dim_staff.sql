@@ -6,7 +6,5 @@ select
     last_name,
     position,
     start_date,
-    location,
-    string_field_6,
-    string_field_7
+    location
 from {{ ref('seed__staff') }}
