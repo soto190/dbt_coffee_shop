@@ -32,7 +32,22 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
+
+  ## see docs: https://docs.elementary-data.com/
+  elementary:
+    ## elementary models will be created in the schema '<your_schema>_elementary'
+    +schema: "elementary"
+    ## To disable elementary for dev, uncomment this:
+    # enabled: "{{ target.name in ['prod','analytics'] }}"
+
+  coffee_shop:
     # Applies to all files under models/example/
-    example:
+    dims:
       materialized: view
+
+    facts:
+      materialized: view
+
+# Required from dbt 1.8 and above for certain Elementary features (please see more details above)
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
