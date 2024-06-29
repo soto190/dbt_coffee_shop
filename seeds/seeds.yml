@@ -1,0 +1,22 @@
+seeds:
+  - name: seed__customers
+    description: Seed with customers data
+    docs:
+      show: true
+    columns:
+      - name: customer_id
+      - name: home_store
+      - name: customer_first_name
+      - name: customer_email
+      - name: customer_since
+      - name: loyalty_card_number
+      - name: birthdate
+      - name: gender
+      - name: birth_year
+  - name: seed__dates
+  - name: seed__generations
+  - name: seed__products
+  - name: seed__sales_outlet
+  - name: seed__sales_targets
+  - name: seed__staff
+  - name: seed__transactions
