@@ -40,11 +40,11 @@ models:
     ## To disable elementary for dev, uncomment this:
     # enabled: "{{ target.name in ['prod','analytics'] }}"
 
-# Required from dbt 1.8 and above for certain Elementary features (please see more details above)
-flags:
-  require_explicit_package_overrides_for_builtin_materializations: false
-
   coffee_shop:
     # Applies to all files under models/example/
     example:
       materialized: view
+
+# Required from dbt 1.8 and above for certain Elementary features (please see more details above)
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
