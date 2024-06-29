@@ -42,7 +42,10 @@ models:
 
   coffee_shop:
     # Applies to all files under models/example/
-    example:
+    dims:
+      materialized: view
+
+    facts:
       materialized: view
 
 # Required from dbt 1.8 and above for certain Elementary features (please see more details above)
