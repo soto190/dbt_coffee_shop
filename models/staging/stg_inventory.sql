@@ -7,5 +7,5 @@ select
     start_of_day,
     quantity_sold,
     waste,
-    pct_waste * 0.01 as pct_waste,
+    pct_waste * 0.01 as pct_waste
 from {{ ref('seed__pastry_inventory') }}
