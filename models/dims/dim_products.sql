@@ -13,4 +13,4 @@ select
     tax_exempt_yn,
     promo_yn,
     new_product_yn
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_products') }}
+from {{ ref('seed__products') }}

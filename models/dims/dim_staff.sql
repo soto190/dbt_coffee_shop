@@ -9,4 +9,4 @@ select
     location,
     string_field_6,
     string_field_7
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_staff') }}
+from {{ ref('seed__staff') }}

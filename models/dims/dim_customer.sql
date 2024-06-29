@@ -10,4 +10,4 @@ select
     birthdate,
     gender,
     birth_year
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_customers') }}
+from {{ ref('seed__customers') }}

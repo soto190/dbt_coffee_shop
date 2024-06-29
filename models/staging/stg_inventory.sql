@@ -8,4 +8,4 @@ select
     quantity_sold,
     waste,
     __waste
-from {{ source('sources_bq__coffe_shop', 'src_bq__stg_inventory') }}
+from {{ ref('seed__pastry_inventory') }}

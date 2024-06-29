@@ -12,4 +12,4 @@ select
     food_goal,
     merchandise__goal,
     total_goal
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_targets') }}
+from {{ ref('seed__sales_targets') }}

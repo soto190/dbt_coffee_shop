@@ -13,4 +13,4 @@ select
     store_latitude,
     manager,
     neighorhood
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_sales_outlet') }}
+from {{ ref('seed__sales_outlet') }}

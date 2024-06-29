@@ -15,6 +15,7 @@ seeds:
       - name: birth_year
   - name: seed__dates
   - name: seed__generations
+  - name: seed__pastry_inventory
   - name: seed__products
   - name: seed__sales_outlet
   - name: seed__sales_targets

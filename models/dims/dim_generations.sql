@@ -7,4 +7,4 @@
 select 
     birth_year,
     generation
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_generations') }}
+from {{ ref('seed__generations') }}
