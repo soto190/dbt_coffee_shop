@@ -10,4 +10,4 @@ select
     quarter_id,
     quarter_name,
     year_id
-from {{ source('sources_bq__coffe_shop', 'src_bq__dim_dates') }}
+from {{ ref('seed__dates') }}
