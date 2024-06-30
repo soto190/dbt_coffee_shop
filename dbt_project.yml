@@ -36,7 +36,10 @@ models:
   ## see docs: https://docs.elementary-data.com/
   elementary:
     ## elementary models will be created in the schema '<your_schema>_elementary'
-    +schema: "elementary"
+    # +schema: "elementary"
+    +meta:
+      schema_name: "elementary_data_observability"
+
     ## To disable elementary for dev, uncomment this:
     # enabled: "{{ target.name in ['prod','analytics'] }}"
 
