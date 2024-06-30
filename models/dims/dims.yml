@@ -1,1 +1,132 @@
-version: 2
+models:
+  - name: dim_customer
+    description: Customers data
+    columns:
+      - name: customer_id
+        description: Customer ID
+        type: integer
+        data_tests:
+          - not_null
+          - unique
+      - name: home_store
+        description: Home store ID
+        type: integer
+        data_tests:
+          - not_null
+      - name: customer_first_name
+        description: Customer first name
+        type: string
+        data_tests:
+          - not_null
+      - name: customer_email
+        description: Customer email
+        type: string
+        data_tests:
+          - not_null
+      - name: customer_since
+        description: Customer since date
+        type: date
+        data_tests:
+          - not_null
+      - name: loyalty_card_number
+        description: Loyalty card number
+        type: string
+        data_tests:
+          - not_null
+      - name: birthdate
+        description: Customer birthdate
+        type: date
+        data_tests:
+          - not_null
+      - name: gender
+        description: Customer gender (F or M)
+        type: string
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['F', 'M']
+      - name: birth_year
+        description: Customer birth year
+        type: integer
+        data_tests:
+          - not_null
+
+  - name: dim_dates
+    description: Dates elements
+    columns:
+      - name: transaction_date
+        description: Transaction date
+        type: date
+        data_tests:
+          - not_null
+          - unique
+      - name: date_id
+        description: Date identifier (yyyymmdd)
+        type: integer
+        data_tests:
+          - not_null
+          - unique
+      - name: week_id
+        description: Week identifier
+        type: integer
+        data_tests:
+          - not_null
+      - name: week_desc
+        description: Week description
+        type: string
+        data_tests:
+          - not_null
+      - name: month_id
+        description: Month identifier
+        type: integer
+        data_tests:
+          - not_null
+      - name: month_desc
+        description: Month name
+        type: string
+        data_tests:
+          - not_null
+      - name: quarter_id
+        description: Quarter identifier
+        type: integer
+        data_tests:
+          - not_null
+      - name: quarter_desc
+        description: Quarter description (QX)
+        type: string
+        data_tests:
+          - not_null
+      - name: year_id
+        description: Year identifier
+        type: integer
+        data_tests:
+          - not_null
+
+  - name: dim_generations
+    description: Generations by years (Boomers, Gen X, Gen Y, Gen Z)
+    columns:
+      - name: birth_year
+        description: Birth year (starting at 1946)
+        type: integer
+        data_tests:
+          - not_null
+          - unique
+      - name: generation
+        description: Generation name
+        type: string
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Baby Boomers', 'Older Millennials', 'Younger Millennials', 'Gen X', 'Gen Z']
+
+  - name: dim_products
+    description: Products data
+
+  - name: dim_sales_outlets
+    description: Sales outlets data
+
+  - name: dim_staff
+    description: Staff data
+
+  - name: dim_targets
+    description: Sales targets
